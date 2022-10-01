@@ -16,7 +16,7 @@ const FullPizza: React.FC = () => {
   React.useEffect(() => {
     async function fetchPizza() {
       try {
-        const { data } = await axios.get(`https://62c2e7f4876c4700f531e25f.mockapi.io/items/${id}`);
+        const { data } = await axios.get(`${process.env.MONGODB_URI}/${id}`);
         setPizza(data);
         // console.log(data);
       } catch (error) {
