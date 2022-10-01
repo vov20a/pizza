@@ -1,7 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { env } from 'process';
 
 const FullPizza: React.FC = () => {
   const navigate = useNavigate();
@@ -17,7 +16,7 @@ const FullPizza: React.FC = () => {
   React.useEffect(() => {
     async function fetchPizza() {
       try {
-        const { data } = await axios.get(`${env.MONGODB_URI}/${id}`);
+        const { data } = await axios.get(`https://62c2e7f4876c4700f531e25f.mockapi.io/items/${id}`);
         setPizza(data);
         // console.log(data);
       } catch (error) {
